@@ -1,7 +1,9 @@
-Setup
------
-jruby+truffle setup
-jruby+truffle run --no-asserts -- app.rb
+Run
+---
+$ jruby+truffle setup
+$ jruby+truffle run -- app.rb
+or
+$ jruby+truffle run -g --no-asserts -- app.rb
 
 Vulns
 -----
