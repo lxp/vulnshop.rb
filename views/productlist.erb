@@ -1,0 +1,18 @@
+<html>
+	<head>
+		<title>VulnShop</title>
+	</head>
+	<body>
+		<h1>Welcome to VulnShop</h1>
+		<p>We don't sell vulnerabilities!</p>
+		<form method="get" action="/search">
+			<input type="text" name="query" value="<%= @query %>" />
+			<input type="submit" value="Search" />
+		</form>
+		<ul>
+			<% for product in @products %>
+			<li><a href="product?id=<%= product[:id] %>"><%= product[:name] %></a></li>
+			<% end %>
+		</ul>
+	</body>
+</html>

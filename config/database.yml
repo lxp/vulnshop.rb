@@ -1,0 +1,8 @@
+development:
+  adapter: mysql
+  host: localhost
+  socket: /var/run/mysqld/mysqld.sock
+  username: vulnshop
+  password: very_secure_password
+  database: vulnshop
+
