@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
-gem 'bundler'
 gem 'sinatra'
 gem 'sinatra-enotify', :git => 'https://github.com/geronime/sinatra-enotify'
 gem 'sinatra-activerecord'
 gem 'ruby-mysql'
+gem 'activemerchant'

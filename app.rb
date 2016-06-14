@@ -1,6 +1,8 @@
 require 'sinatra'
 require 'sinatra-enotify'
 require 'sinatra/activerecord'
+require 'openssl-stubs'
+require 'activemerchant'
 require './models'
 
 Sinatra::register Sinatra::ENotify
