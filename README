@@ -1,3 +1,8 @@
+Setup
+-----
+jruby+truffle setup
+jruby+truffle run --no-asserts -- app.rb
+
 Vulns
 -----
 
