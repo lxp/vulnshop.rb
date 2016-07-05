@@ -1,18 +1,24 @@
-<html>
-	<head>
-		<title>VulnShop</title>
-	</head>
-	<body>
-		<h1>Welcome to VulnShop</h1>
-		<p>We don't sell vulnerabilities!</p>
-		<form method="get" action="/search">
-			<input type="text" name="query" value="<%= @query %>" />
-			<input type="submit" value="Search" />
-		</form>
-		<ul>
-			<% for product in @products %>
-			<li><a href="product?id=<%= product[:id] %>"><%= product[:name] %></a></li>
-			<% end %>
-		</ul>
-	</body>
-</html>
+<div class="jumbotron">
+	<h1>Welcome to VulnShop</h1>
+	<p>We don't sell vulnerabilities!</p>
+</div>
+<form method="get" action="/search">
+	<div class="form-group input-group">
+		<input type="text" class="form-control" name="query" value="<%= @query %>" placeholder="Search for...">
+		<span class="input-group-btn">
+			<input type="submit" class="btn btn-primary" value="Go!">
+		</span>
+	</div>
+</form>
+<ul class="media-list">
+	<% for product in @products %>
+	<li class="media">
+		<div class="media-left">
+			<a href="product?id=<%= product[:id] %>"><img class="media-object" src="img/thumb.svg"></a>
+		</div>
+		<div class="media-body">
+			<h4 class="media-heading"><a href="product?id=<%= product[:id] %>"><%= product[:name] %></a></h4>
+		</div>
+	</li>
+	<% end %>
+</ul>

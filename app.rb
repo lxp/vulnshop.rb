@@ -23,5 +23,6 @@ require './routes'
 
 error do
   enotify env['sinatra.error']
-  erb :exception
+  @page = :exception
+  erb :template
 end

@@ -1,28 +1,32 @@
 get '/' do
+  @page = :productlist
   @query = ''
   @products = Product.all
-  erb :productlist
+  erb :template
 end
 
 get '/search' do
+  @page = :productlist
   @query = params[:query]
   @products = Product.where("name LIKE '%#{@query}%'")
-  erb :productlist
+  erb :template
 end
 
 get '/product' do
   id = params[:id]
   if Product.exists?(id)
+    @page = :product
     @product = Product.find(id)
-    erb :product
   else
-    erb :product_notfound
+    @page = :product_notfound
   end
+  erb :template
 end
 
 get '/product/:id' do |id|
+  @page = :product
   @product = Product.find(id)
-  erb :product
+  erb :template
 end
 
 post '/order' do
@@ -58,6 +62,7 @@ post '/order' do
     raise StandardError, 'invalid credit card'
   end
 
+  @page = :order_success
   @name = params[:name]
-  erb :order_success
+  erb :template
 end

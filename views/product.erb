@@ -1,39 +1,48 @@
-<html>
-	<head>
-		<title>VulnShop</title>
-	</head>
-	<body>
-		<h1><%= @product[:name] %></h1>
+<div class="page-header">
+	<h1><%= @product[:name] %></h1>
+</div>
+<div class="panel panel-default">
+	<div class="panel-body">
 		<p><%= @product[:description] %></p>
 		<p>Price: <%= @product[:price] / 100 %></p>
-		<h3>Order</h3>
+	</div>
+</div>
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title">Order</h3>
+	</div>
+	<div class="panel-body">
 		<form method="post" action="/order">
 			<input type="hidden" name="id" value="<%= @product[:id] %>" />
-			<fieldset data-role="controlgroup">
-				<label for="name">Name:</label>
-				<p>
-					<input type="text" id="name" name="name" value="Tobias Luetke" />
-				</p>
-				<label for="cc">Credit card number:</label>
-				<p>
-					<input type="text" id="cc" name="cc" value="4011111111111112" />
-				</p>
-				<label for="month">Month:</label>
-				<p>
-					<input type="text" id="month" name="month" value="8" />
-				</p>
-				<label for="year">Year:</label>
-				<p>
-					<input type="text" id="year" name="year" value="2025" />
-				</p>
-				<label for="cvv">CVV:</label>
-				<p>
-					<input type="text" id="cvv" name="cvv" value="123" />
-				</p>
-				<p>
-					<input type="submit" value="Purchase" />
-				</p>
-			</fieldset>
+			<div class="form-group">
+				<div class="row">
+					<div class="col-md-4">
+						<label for="cc">Card Number</label>
+						<p><input type="text" class="form-control" id="cc" name="cc" value="4011111111111112"></p>
+					</div>
+					<div class="col-md-2">
+						<label for="cvv">Security Code</label>
+						<p><input type="text" class="form-control" id="cvv" name="cvv" value="123"></p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+							<label for="name">Name on Card</label>
+						<p><input type="text" class="form-control" id="name" name="name" value="Tobias Luetke"></p>
+					</div>
+						<div class="col-md-1">
+						<label for="month">Month</label>
+						<p><input type="text" class="form-control" id="month" name="month" value="8"></p>
+					</div>
+						<div class="col-md-1">
+						<label for="year">Year</label>
+						<p><input type="text" class="form-control" id="year" name="year" value="2025"></p>
+					</div>
+				</div>
+			</div>
+			<p>
+				<input type="submit" class="btn btn-primary" value="Purchase">
+			</p>
 		</form>
-	</body>
-</html>
+	</div>
+</div>
