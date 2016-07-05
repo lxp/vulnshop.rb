@@ -29,6 +29,38 @@ get '/product/:id' do |id|
   erb :template
 end
 
+get '/register' do
+  @page = :auth
+  @actiontext = 'Register'
+  erb :template
+end
+
+get '/login' do
+  @page = :auth
+  @actiontext = 'Login'
+  erb :template
+end
+
+post '/register' do
+  u = User.create(username: params[:username], password: params[:password])
+  @page = :authresult
+  @authresult = 'successful'
+  @actiontext = 'Register'
+  erb :template
+end
+
+post '/login' do
+  @page = :authresult
+  u = User.find_by(username: params[:username])
+  if u.password == params[:password]
+    @authresult = 'successful'
+  else
+    @authresult = 'failed'
+  end
+  @actiontext = 'Login'
+  erb :template
+end
+
 post '/order' do
   product = Product.find(params[:id])
   price = product[:price]

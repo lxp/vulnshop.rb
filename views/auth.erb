@@ -1,0 +1,12 @@
+<div class="page-header">
+	<h1><%= h @actiontext %></h1>
+</div>
+<form method="post" action="">
+	<div class="form-group">
+		<label for="username">Username</label>
+		<p><input type="text" class="form-control" id="username" name="username" placeholder="Username"></p>
+		<label for="password">Password</label>
+		<p><input type="password" class="form-control" id="password" name="password" placeholder="Password"></p>
+	</div>
+	<p><input type="submit" class="btn btn-primary" value="<%= h @actiontext %>"></p>
+</form>
