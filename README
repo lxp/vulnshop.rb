@@ -5,8 +5,8 @@ JRuby  in ~/graalvm/jruby
 
 Run
 ---
-$ sh setup.sh
-$ sh run.sh
+$ bin/setup.sh
+$ bin/run.sh
 
 Vulns
 -----
