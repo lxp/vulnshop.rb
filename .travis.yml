@@ -1,0 +1,20 @@
+sudo: false
+
+language: ruby
+
+cache:
+  directories:
+    - $HOME/.m2
+
+matrix:
+  include:
+    - env: RUBY_STACK=jt PATH=$HOME/graalvm/jruby/bin:$HOME/graalvm/mx:$PATH JAVA_HOME=$HOME/graalvm/jdk
+
+before_install:
+  - unset JRUBY_OPTS
+
+install:
+  - bin/travis-setup
+
+after_failure:
+  - find . -iname "*.log" -print0 | xargs -0 cat
