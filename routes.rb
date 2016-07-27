@@ -42,7 +42,7 @@ get '/login' do
 end
 
 post '/register' do
-  u = User.create(username: params[:username], password: params[:password])
+  u = User.create(username: params[:username], password: Argon2::Password.create(params[:password]))
   @page = :authresult
   @authresult = 'successful'
   @actiontext = 'Register'
@@ -52,7 +52,7 @@ end
 post '/login' do
   @page = :authresult
   u = User.find_by(username: params[:username])
-  if u.password == params[:password]
+  if Argon2::Password.verify_password(params[:password], u.password)
     @authresult = 'successful'
   else
     @authresult = 'failed'

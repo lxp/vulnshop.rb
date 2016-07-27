@@ -2,7 +2,7 @@
 --
 -- Host: localhost    Database: vulnshop
 -- ------------------------------------------------------
--- Server version	5.7.12-0ubuntu1
+-- Server version	5.7.12-0ubuntu1.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -63,7 +63,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'test','test');
+INSERT INTO `users` VALUES (1,'test','$argon2i$v=19$m=65536,t=2,p=1$axAenvUG+ZP0Js95DXogNw$5MFjMXtEy64UDNTNGi16IarggIwX0Sm5oP4uiPIA88k');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -76,4 +76,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-07-05 15:55:52
+-- Dump completed on 2016-07-26 11:08:57

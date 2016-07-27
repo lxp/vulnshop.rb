@@ -1,9 +1,12 @@
+Requirements
+------------
+Sulong in ~/graalvm/sulong
+JRuby  in ~/graalvm/jruby
+
 Run
 ---
-$ jruby+truffle setup
-$ jruby+truffle run -- app.rb
-or
-$ jruby+truffle run -g --no-asserts -- app.rb
+$ sh setup.sh
+$ sh run.sh
 
 Vulns
 -----
