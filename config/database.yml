@@ -5,4 +5,9 @@ development:
   username: vulnshop
   password: very_secure_password
   database: vulnshop
+test:
+  adapter: mysql
+  host: localhost
+  username: travis
+  database: vulnshop
 
