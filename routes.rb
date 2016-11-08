@@ -5,6 +5,10 @@ get '/' do
   erb :template
 end
 
+get '/hello' do
+  'hello world'
+end
+
 get '/search' do
   @page = :productlist
   @query = params[:query]

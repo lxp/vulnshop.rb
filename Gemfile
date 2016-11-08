@@ -5,3 +5,5 @@ gem 'sinatra-activerecord'
 gem 'ruby-mysql'
 gem 'activemerchant'
 gem 'argon2', :git => 'https://github.com/lxp/ruby-argon2.git', :branch => 'jruby+truffle', :submodules => true
+gem 'rspec'
+gem 'rack-test'
