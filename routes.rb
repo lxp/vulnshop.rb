@@ -52,7 +52,7 @@ end
 post '/login' do
   @page = :authresult
   u = User.find_by(username: params[:username])
-  if Argon2::Password.verify_password(params[:password], u.password)
+  if not u.nil? and Argon2::Password.verify_password(params[:password], u.password)
     @authresult = 'successful'
   else
     @authresult = 'failed'
