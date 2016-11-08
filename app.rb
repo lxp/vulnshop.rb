@@ -1,7 +1,6 @@
 require 'sinatra'
 require 'sinatra-enotify'
 require 'sinatra/activerecord'
-require 'openssl-stubs'
 require 'activemerchant'
 require 'argon2'
 require './models'
